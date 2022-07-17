@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:spotifly/DataModels/Category.dart';
 import 'package:spotifly/DataModels/MusicCategory.dart';
+import 'package:spotifly/Screens/HomeScreen.dart';
+
 import 'package:spotifly/Services/MusicOperations.dart';
 import 'package:spotifly/Services/Operations.dart';
 
-Widget createCategory(Category category)
-{
+
+Widget createCategory(Category category) {
   return Container(
       color: Colors.blueGrey.shade800,
       child: Row(
@@ -15,23 +17,22 @@ Widget createCategory(Category category)
             padding: const EdgeInsets.only(left: 10),
             child: Text(
               category.title,
-              style:const  TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
           )
         ],
       ));
-
 }
 
-List <Widget> createListCategory()
-{
-  List<Category>categoryList=Operations.getCategory();
-  List<Widget>categories= categoryList.map((Category category)=>createCategory(category)).toList();
+List<Widget> createListCategory() {
+  List<Category> categoryList = Operations.getCategory();
+  List<Widget> categories = categoryList
+      .map((Category category) => createCategory(category))
+      .toList();
   return categories;
 }
 
-Widget gridCategory()
-{
+Widget gridCategory() {
   return Container(
     padding: const EdgeInsets.all(10),
     height: 280,
@@ -46,7 +47,7 @@ Widget gridCategory()
 }
 
 class Album extends StatelessWidget {
-  const Album({Key? key, required this. music}) : super(key: key);
+  const Album({Key? key, required this.music}) : super(key: key);
   final MusicCategory music;
   @override
   Widget build(BuildContext context) {
@@ -58,13 +59,29 @@ class Album extends StatelessWidget {
           Container(
               height: 200,
               width: 200,
-              child: Image.network(music.imgURL,fit: BoxFit.cover,)),
+              child: InkWell(
+                child: Image.network(
+                  music.imgURL,
+                  fit: BoxFit.cover,
+                ),
+                onTap: () {
+                  
+                },
+              )),
           const SizedBox(
             height: 5,
           ),
-          Text(music.title,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-
-          Text(music.discription,style:const TextStyle(color: Colors.white,),)
+          Text(
+            music.title,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            music.discription,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          )
         ],
       ),
     );
@@ -72,19 +89,18 @@ class Album extends StatelessWidget {
 }
 
 
-Widget albumList()
-{
-  List<MusicCategory>musicList=MusicOperation.getMusicCategory();
+
+Widget albumList() {
+  List<MusicCategory> musicList = MusicOperation.getMusicCategory();
   return SizedBox(
-    height:300 ,
-
+    height: 300,
     child: ListView.builder(
-      itemBuilder: (BuildContext context,int index){
+      itemBuilder: (BuildContext context, int index) {
         return Album(music: musicList[index]);
-
       },
       itemCount: musicList.length,
-      scrollDirection: Axis.horizontal,),
+      scrollDirection: Axis.horizontal,
+    ),
   );
 }
 
@@ -98,7 +114,11 @@ class VerticleList extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.all(8.0),
-          child: Text("Made For You",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 30),),
+          child: Text(
+            "Made For You",
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
+          ),
         ),
         albumList()
       ],
@@ -106,17 +126,15 @@ class VerticleList extends StatelessWidget {
   }
 }
 
-Widget verticleAlbumList()
-{
+Widget verticleAlbumList() {
   return SizedBox(
-    height:300 ,
-
+    height: 300,
     child: ListView.builder(
-      itemBuilder: (BuildContext context,int index){
+      itemBuilder: (BuildContext context, int index) {
         return VerticleList();
-
       },
-      itemCount:10,
-      scrollDirection: Axis.vertical,),
+      itemCount: 10,
+      scrollDirection: Axis.vertical,
+    ),
   );
 }

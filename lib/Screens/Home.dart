@@ -1,14 +1,12 @@
+// ignore: file_names
 
-import 'package:flutter/material.dart';
-import 'package:spotifly/DataModels/Category.dart';
-import 'package:spotifly/DataModels/MusicCategory.dart';
-import 'package:spotifly/Services/MusicOperations.dart';
-import 'package:spotifly/Services/Operations.dart';
+import 'package:flutter/material.dart' show BuildContext, Colors, Column, CrossAxisAlignment, EdgeInsets, FontWeight, Key, MediaQuery, Padding, SafeArea, SingleChildScrollView, Size, SizedBox, StatelessWidget, Text, TextStyle, Widget;
 import 'package:spotifly/Widgets/AppBar.dart';
 import 'package:spotifly/Widgets/HomeScreenWidgets.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
