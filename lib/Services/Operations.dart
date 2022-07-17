@@ -19,12 +19,12 @@ class Operations{
         'https://is1-ssl.mzstatic.com/image/thumb/Purple71/v4/d1/ba/85/d1ba8582-972e-7e02-6f3b-cc47adfc055f/source/256x256bb.jpg',
       ),
       Category(
-        'Smile',
-        'https://c-cl.cdn.smule.com/rs-s78/arr/30/d7/5a82d9ae-9589-443c-b950-25c139abae89_256.jpg',
+        'Weekend',
+        'https://hips.hearstapps.com/hmg-prod/images/15-1598362258.jpg?crop=0.506xw:1.00xh;0.290xw,0&resize=1200:*',
       ),
       Category(
-        'Rock Band',
-        'https://images.genius.com/af067ceaade20726f2b85176ff8dc6e8.256x256x1.jpg',
+        'Arjit Hits',
+        'https://static.qobuz.com/images/covers/6a/3b/pnro4yukm3b6a_600.jpg',
       ),
       Category(
         'Kishore',

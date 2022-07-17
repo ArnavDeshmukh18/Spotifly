@@ -32,18 +32,13 @@ class Home extends StatelessWidget {
           albumList(),
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Made For You",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 30),),
+            child: Text("Your Playlists",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 30),),
           ),
           albumList(),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text("Made For You",style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 30),),
-          ),
-          albumList(),
-
+         
         ],
       ),
-    ));
+    )); 
   }
 }
 
